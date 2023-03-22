@@ -1,0 +1,33 @@
+{
+  "usuarios" : [
+    {
+      "id": 1,
+      "nome": "admin",
+      "nomeEmpresa": "admin",
+      "cnpj": "11111111000111",
+      "email": "admin@admin.com"
+    }
+  ],
+  "colecoes": [
+    {
+      "colecaoId": 1,
+      "nome": "Adidas",
+      "responsavel": "Murilo",
+      "estacao": "inverno",
+      "marca": "adidas",
+      "orcamento": 9600,
+      "lancamento": "2023",
+      "modelos": [
+        {
+          "modeloId": 1,
+          "nome": "Camiseta sport",
+          "responsavel": "Murilo",
+          "tipo": "camisa",
+          "colecao": "1",
+          "bordado": "true",
+          "estampa": "true"
+        }
+      ]
+    }
+  ]
+}
