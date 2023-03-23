@@ -1,3 +1,4 @@
+import { IColecao } from './../../models/colecao';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -11,7 +12,7 @@ export class ColecaoService {
 
   constructor(private http: HttpClient) { }
 
-  getColecoes(): Observable<IColecoes[]>{
-    return this.http.get<IColecoes[]>(this.url);
+  getColecoes(): Observable<IColecao[]>{
+    return this.http.get<IColecao[]>(this.url);
   }
 }

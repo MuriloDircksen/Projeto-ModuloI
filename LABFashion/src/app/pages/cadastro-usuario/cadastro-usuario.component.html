@@ -1,0 +1,49 @@
+
+<div class="container">
+
+  <form [formGroup]="formUsuario">
+
+    <img src="../../../assets/Fill-51.png">
+    <div class="container-quadro" >
+      <h2>Sign Up</h2>
+      <h6>Insira seus dados para criar uma conta</h6>
+      <br>
+      <div  class="form-floating mt-3 mb-4">
+        <input formControlName="nome" type="email" class="form-control" id="floatingInput" placeholder="Nome">
+        <label for="floatingInput">Nome</label>
+      </div>
+      <div  class="form-floating mt-3 mb-4">
+        <input formControlName="empresa" type="text" class="form-control" id="floatingInput" placeholder="Empresa">
+        <label for="floatingInput">Empresa</label>
+      </div>
+      <div  class="form-floating mt-3 mb-4">
+        <input formControlName="cnpj" type="text" class="form-control" id="floatingInput" placeholder="CNPJ">
+        <label for="floatingInput">CNPJ</label>
+      </div>
+      <div  class="form-floating mt-3 mb-4">
+        <input formControlName="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <label for="floatingInput">Informe seu e-mail</label>
+      </div>
+
+      <div  class="row">
+        <div class="form-floating mt-3 mb-4 col-6 ">
+          <input formControlName="senha" type="password" class="form-control" id="floatingInput" placeholder="Senha">
+          <label for="floatingInput">Senha</label>
+        </div>
+        <div class="form-floating mt-3 mb-4 col-6 ">
+          <input formControlName="confirmaSenha" type="password" class="form-control" id="floatingInput" placeholder="Confirmar Senha">
+          <label for="floatingInput">Confirma senha</label>
+        </div>
+      </div>
+
+
+
+      <button (click)="onSubmit()" type="submit" [disabled]="!formUsuario.valid" class="btn btn-primary">Criar conta</button>
+    </div>
+    <br>
+    <a class="texto">Já possui cadastro?</a>
+    <a class="acesso" routerLink="/login"> Realizar login</a>
+    </form>
+
+</div>
+

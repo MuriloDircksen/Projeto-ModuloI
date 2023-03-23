@@ -1,11 +1,20 @@
 {
-  "usuarios" : [
+  "usuarios": [
     {
       "id": 1,
       "nome": "admin",
+      "senha": "root1234",
       "nomeEmpresa": "admin",
       "cnpj": "11111111000111",
       "email": "admin@admin.com"
+    },
+    {
+      "nome": "Murilo",
+      "senha": "12345678",
+      "nomeEmpresa": "kairos",
+      "cnpj": "11111111111111",
+      "email": "murilo@kairos.com",
+      "id": 2
     }
   ],
   "colecoes": [

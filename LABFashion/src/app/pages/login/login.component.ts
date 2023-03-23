@@ -1,0 +1,73 @@
+import { Router } from '@angular/router';
+import { UsuarioService } from '../../service/usuario/usuario.service';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { IUsuario } from 'src/app/models/usuario';
+
+@Component({
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss']
+})
+export class LoginComponent implements OnInit {
+  usuario!: IUsuario;
+  formUsuario!: FormGroup;
+  listaUsuarios:IUsuario[]=[];
+
+  constructor(private serviceUsuario: UsuarioService, private router:Router){}
+
+  ngOnInit(): void {
+    this.criaForm();
+    this.getListaUsuarios();
+  }
+
+  criaForm(){
+    this.formUsuario = new FormGroup({
+      email: new FormControl('', [Validators.required, Validators.email]),
+      senha: new FormControl('', [Validators.required, Validators.minLength(8)])
+    });
+  }
+
+  get email(){
+    return this.formUsuario.get('email')!;
+  }
+
+  get senha(){
+    return this.formUsuario.get('senha')!;
+  }
+
+  getListaUsuarios():void{
+    this.serviceUsuario.getUsuarios().subscribe((usuarios) => {
+      this.listaUsuarios = usuarios;
+
+     })
+   }
+
+   validaUsuario(){
+    return this.listaUsuarios.find((usuario)=>{
+
+      if(usuario.email === this.email.value){
+         if(usuario.senha == this.senha.value){
+
+           return true;
+         }
+
+       }
+       alert('Email ou senha inválidos!')
+       return false;
+
+     })
+
+   }
+   onSubmit(){
+
+    if(this.validaUsuario()){
+      console.log(this.validaUsuario());
+
+      this.router.navigate(['/home'])
+    }
+
+  }
+
+
+}

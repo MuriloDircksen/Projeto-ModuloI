@@ -7,12 +7,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ContentComponent } from './layouts/content/content.component';
 import { FullComponent } from './layouts/full/full.component';
+import { LoginComponent } from './pages/login/login.component';
+import { CadastroUsuarioComponent } from './pages/cadastro-usuario/cadastro-usuario.component';
+import { EsqueciSenhaComponent } from './pages/esqueci-senha/esqueci-senha.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContentComponent,
-    FullComponent
+    FullComponent,
+    LoginComponent,
+    CadastroUsuarioComponent,
+    EsqueciSenhaComponent
   ],
   imports: [
     BrowserModule,
@@ -22,6 +28,7 @@ import { FullComponent } from './layouts/full/full.component';
     FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+
 })
 export class AppModule { }
