@@ -53,6 +53,7 @@ export class CadastroUsuarioComponent implements OnInit {
     if(this.confirmaSenha.value == this.senha.value){
       return true;
     }
+    alert("Senha inválida!")
     return false
   }
 

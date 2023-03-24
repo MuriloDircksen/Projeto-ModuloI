@@ -1,3 +1,4 @@
+import { AuthUsuarioGuard } from './security/auth-usuario.guard';
 import { EsqueciSenhaComponent } from './pages/esqueci-senha/esqueci-senha.component';
 import { CadastroUsuarioComponent } from './pages/cadastro-usuario/cadastro-usuario.component';
 import { NgModule } from '@angular/core';
@@ -33,6 +34,7 @@ const routes: Routes = [
   {
     path: 'home',
     component: FullComponent,
+    canActivate:[AuthUsuarioGuard],
     children: [
 
     ]
