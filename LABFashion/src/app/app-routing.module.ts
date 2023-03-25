@@ -1,3 +1,4 @@
+import { ModificaColecaoComponent } from './components/colecao/modifica-colecao/modifica-colecao.component';
 import { ColecaoComponent } from './components/colecao/colecao.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AuthUsuarioGuard } from './security/auth-usuario.guard';
@@ -44,7 +45,15 @@ const routes: Routes = [
       },
       {
         path: 'colecao',
-        component: ColecaoComponent
+        component: ColecaoComponent,
+      },
+      {
+        path:'colecao/:id',
+        component: ModificaColecaoComponent
+      },
+      {
+        path: 'colecao/criar',
+        component: ModificaColecaoComponent
       }
 
     ]

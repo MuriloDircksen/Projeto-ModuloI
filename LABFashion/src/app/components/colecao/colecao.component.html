@@ -18,7 +18,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let colecao of listaColecoes" routerLink="/login" class="linhaClicavel">
+      <tr *ngFor="let colecao of listaColecoes" [routerLink]="['/colecao/', colecao.colecaoId]" class="linhaClicavel">
 
         <td>{{colecao.nomeColecao}}</td>
         <td>{{colecao.responsavelColecao}}</td>

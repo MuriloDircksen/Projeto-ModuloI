@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { ColecaoService } from './../../service/colecao/colecao.service';
 import { IColecao } from './../../models/colecao';
 import { Component, OnInit } from '@angular/core';
@@ -11,7 +12,7 @@ export class ColecaoComponent implements OnInit{
 
   listaColecoes!: IColecao[];
 
-  constructor(private colecaoService: ColecaoService){}
+  constructor(private colecaoService: ColecaoService, private router: Router){}
 
   ngOnInit(): void {
     this.buscaColecoes();
@@ -26,6 +27,8 @@ export class ColecaoComponent implements OnInit{
     return modelo.length;
   }
 
-  criaColecao(){}
+  criaColecao(){
+    this.router.navigate(['/colecao/criar'])
+  }
 
 }

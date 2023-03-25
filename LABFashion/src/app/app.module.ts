@@ -15,6 +15,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { CardsComponent } from './components/cards/cards.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ColecaoComponent } from './components/colecao/colecao.component';
+import { ModificaColecaoComponent } from './components/colecao/modifica-colecao/modifica-colecao.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ColecaoComponent } from './components/colecao/colecao.component';
     HeaderComponent,
     CardsComponent,
     DashboardComponent,
-    ColecaoComponent
+    ColecaoComponent,
+    ModificaColecaoComponent
   ],
   imports: [
     BrowserModule,
