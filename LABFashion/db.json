@@ -20,8 +20,8 @@
   "colecoes": [
     {
       "colecaoId": 1,
-      "nome": "Adidas",
-      "responsavel": "Murilo",
+      "nomeColecao": "Adidas",
+      "responsavelColecao": "Murilo",
       "estacao": "inverno",
       "marca": "adidas",
       "orcamento": 9600,
@@ -29,14 +29,93 @@
       "modelos": [
         {
           "modeloId": 1,
-          "nome": "Camiseta sport",
-          "responsavel": "Murilo",
+          "nomeModelo": "Camiseta sport",
+          "responsavelModelo": "Murilo",
+          "tipo": "camisa",
+          "colecao": "1",
+          "bordado": "true",
+          "estampa": "true"
+        },
+        {
+          "modeloId": 2,
+          "nomeModelo": "Camiseta sport",
+          "responsavelModelo": "Murilo",
           "tipo": "camisa",
           "colecao": "1",
           "bordado": "true",
           "estampa": "true"
         }
       ]
+    },
+    {
+      "colecaoId": 2,
+      "nomeColecao": "Adidas",
+      "responsavelColecao": "Murilo",
+      "estacao": "inverno",
+      "marca": "adidas",
+      "orcamento": 10000,
+      "lancamento": "2023",
+      "modelos": []
+    },
+    {
+      "colecaoId": 3,
+      "nomeColecao": "Adidas",
+      "responsavelColecao": "Murilo",
+      "estacao": "inverno",
+      "marca": "adidas",
+      "orcamento": 500,
+      "lancamento": "2023",
+      "modelos": [
+        {
+          "modeloId": 3,
+          "nomeModelo": "Camiseta sport",
+          "responsavelModelo": "Murilo",
+          "tipo": "camisa",
+          "colecao": "1",
+          "bordado": "true",
+          "estampa": "true"
+        }
+      ]
+    },
+    {
+      "colecaoId": 4,
+      "nomeColecao": "Adidas",
+      "responsavelColecao": "Murilo",
+      "estacao": "inverno",
+      "marca": "adidas",
+      "orcamento": 2300,
+      "lancamento": "2023",
+      "modelos": []
+    },
+    {
+      "colecaoId": 5,
+      "nomeColecao": "Adidas",
+      "responsavelColecao": "Murilo",
+      "estacao": "inverno",
+      "marca": "adidas",
+      "orcamento": 7000,
+      "lancamento": "2023",
+      "modelos": [
+        {
+          "modeloId": 4,
+          "nomeModelo": "Camiseta sport",
+          "responsavelModelo": "Murilo",
+          "tipo": "camisa",
+          "colecao": "1",
+          "bordado": "true",
+          "estampa": "true"
+        }
+      ]
+    },
+    {
+      "colecaoId": 6,
+      "nomeColecao": "Adidas",
+      "responsavelColecao": "Murilo",
+      "estacao": "inverno",
+      "marca": "adidas",
+      "orcamento": 6500,
+      "lancamento": "2023",
+      "modelos": []
     }
   ]
 }

@@ -1,3 +1,4 @@
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AuthUsuarioGuard } from './security/auth-usuario.guard';
 import { EsqueciSenhaComponent } from './pages/esqueci-senha/esqueci-senha.component';
 import { CadastroUsuarioComponent } from './pages/cadastro-usuario/cadastro-usuario.component';
@@ -36,6 +37,10 @@ const routes: Routes = [
     component: FullComponent,
     canActivate:[AuthUsuarioGuard],
     children: [
+      {
+        path: '',
+        component: DashboardComponent
+      }
 
     ]
   }

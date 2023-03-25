@@ -1,7 +1,7 @@
-<div class="container-fluid">
+<div class="container-fluid ">
   <div class="row flex-nowrap">
-      <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-white">
-          <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+      <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-white shadow">
+          <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100 ">
               <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-black text-decoration-none">
                 <img src="../../../assets/Fill-51.png"> <span class="fs-5 d-none d-sm-inline">Audaces</span>
               </a>
@@ -13,26 +13,26 @@
                       </a>
                   </li>
                   <li>
-                      <a routerLink="/cadastro" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                          <i class="fs-4 bi-speedometer2"></i> <span  class="ms-1 d-none d-sm-inline">Dashboard</span> </a>
+                      <a routerLink="/home" data-bs-toggle="collapse" class="nav-link px-0 align-middle" routerLinkActive="mudaFundoBotao">
+                          <i class="fs-4 bi-speedometer2"></i> <span  class="ms-1 d-none d-sm-inline ">Dashboard</span> </a>
 
                   </li>
                   <li>
-                      <a href="#" class="nav-link px-0 align-middle">
+                      <a routerLink="#sub" class="nav-link px-0 align-middle" routerLinkActive="mudaFundoBotao">
                           <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Coleções</span></a>
                   </li>
                   <li>
-                      <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
+                      <a routerLink="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle " routerLinkActive="mudaFundoBotao">
                           <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline">Modelos</span></a>
 
                   </li>
                   <li>
-                      <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                      <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle" routerLinkActive="mudaFundoBotao">
                           <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">Obter Ajuda</span> </a>
 
                   </li>
                   <li>
-                      <a href="#" class="nav-link px-0 align-middle">
+                      <a href="#submenu4" class="nav-link px-0 align-middle" routerLinkActive="mudaFundoBotao">
                           <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Comentários</span> </a>
                   </li>
               </ul>
@@ -40,8 +40,8 @@
 
           </div>
       </div>
-      <div class="col py-3">
-         <app-cards></app-cards>
+      <div class="col py-3 corFundo">
+         <router-outlet></router-outlet>
       </div>
   </div>
 </div>

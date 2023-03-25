@@ -1,0 +1,26 @@
+<h3>Dashboard</h3>
+
+<app-cards [mediaOrcamentos]="mediaOrcamentos" [totalColecoes]="totalColecoes" [totalModelos]="totalModelos"></app-cards>
+<div class="fundo">
+  <p>Maiores Orçamentos</p>
+  <table class="table">
+
+    <thead>
+      <tr>
+        <th scope="col">Coleção</th>
+        <th scope="col">Responsável</th>
+        <th scope="col">Modelos</th>
+        <th scope="col">Orçamento</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let colecao of maioresColecoes">
+        <td>{{colecao.nomeColecao}}</td>
+        <td>{{colecao.responsavelColecao}}</td>
+        <td>{{numeromodelos(colecao.modelos)}}</td>
+        <td>{{colecao.orcamento |  currency: 'BRL'}}</td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
