@@ -13,7 +13,7 @@ export class AuthUsuarioGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
-      const retornaValidacaoLocalStorage = JSON.parse(localStorage.getItem('conectado') as string);
+      const retornaValidacaoLocalStorage = JSON.parse(localStorage.getItem('segurança') as string);
 
       if(!retornaValidacaoLocalStorage){
         this.router.navigate(['/login'])

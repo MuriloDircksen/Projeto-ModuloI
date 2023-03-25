@@ -10,6 +10,7 @@ import { FullComponent } from './layouts/full/full.component';
 import { LoginComponent } from './pages/login/login.component';
 import { CadastroUsuarioComponent } from './pages/cadastro-usuario/cadastro-usuario.component';
 import { EsqueciSenhaComponent } from './pages/esqueci-senha/esqueci-senha.component';
+import { MenuLateralComponent } from './components/menu-lateral/menu-lateral.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { EsqueciSenhaComponent } from './pages/esqueci-senha/esqueci-senha.compo
     FullComponent,
     LoginComponent,
     CadastroUsuarioComponent,
-    EsqueciSenhaComponent
+    EsqueciSenhaComponent,
+    MenuLateralComponent
   ],
   imports: [
     BrowserModule,

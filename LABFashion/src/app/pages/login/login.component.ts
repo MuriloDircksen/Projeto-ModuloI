@@ -62,9 +62,9 @@ export class LoginComponent implements OnInit {
    onSubmit(){
 
     if(this.validaUsuario()){
-      console.log(this.validaUsuario());
+
       localStorage.setItem('segurança', 'true');
-      this.router.navigate(['/cadastro'])
+      this.router.navigate(['/home'])
     }
 
   }
