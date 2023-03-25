@@ -14,6 +14,7 @@ import { MenuLateralComponent } from './components/menu-lateral/menu-lateral.com
 import { HeaderComponent } from './components/header/header.component';
 import { CardsComponent } from './components/cards/cards.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ColecaoComponent } from './components/colecao/colecao.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     MenuLateralComponent,
     HeaderComponent,
     CardsComponent,
-    DashboardComponent
+    DashboardComponent,
+    ColecaoComponent
   ],
   imports: [
     BrowserModule,

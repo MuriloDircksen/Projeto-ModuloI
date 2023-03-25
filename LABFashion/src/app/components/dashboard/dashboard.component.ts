@@ -59,8 +59,6 @@ export class DashboardComponent implements OnInit {
     })
     this.mediaOrcamentos = parseFloat((somaTotal/this.listaColecoes.length).toFixed(2));
 
-    console.log(this.mediaOrcamentos);
-
   }
 
 

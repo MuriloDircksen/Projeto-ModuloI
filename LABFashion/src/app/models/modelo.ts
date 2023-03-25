@@ -1,4 +1,5 @@
 export interface IModelo{
+
   modeloId: number,
   nome: string,
   responsavel: string,

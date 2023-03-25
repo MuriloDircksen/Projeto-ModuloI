@@ -1,3 +1,4 @@
+import { ColecaoComponent } from './components/colecao/colecao.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AuthUsuarioGuard } from './security/auth-usuario.guard';
 import { EsqueciSenhaComponent } from './pages/esqueci-senha/esqueci-senha.component';
@@ -33,13 +34,17 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'home',
+    path: '',
     component: FullComponent,
     canActivate:[AuthUsuarioGuard],
     children: [
       {
-        path: '',
+        path: 'home',
         component: DashboardComponent
+      },
+      {
+        path: 'colecao',
+        component: ColecaoComponent
       }
 
     ]

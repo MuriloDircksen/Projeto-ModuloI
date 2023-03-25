@@ -1,0 +1,33 @@
+<div class="container-cabecalho">
+  <h5>Coleções</h5>
+  <button type="submit" (click)="criaColecao()">Criar Coleção</button>
+</div>
+<br><br>
+
+<div class="fundo">
+
+  <table class="table">
+
+    <thead>
+      <tr>
+        <th scope="col">Coleção</th>
+        <th scope="col">Responsável</th>
+        <th scope="col">Estação-Lançamento</th>
+        <th scope="col">Modelos</th>
+        <th scope="col">Orçamento</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let colecao of listaColecoes" routerLink="/login" class="linhaClicavel">
+
+        <td>{{colecao.nomeColecao}}</td>
+        <td>{{colecao.responsavelColecao}}</td>
+        <td>{{colecao.estacao}} {{colecao.lancamento}}</td>
+        <td>{{numeromodelos(colecao.modelos)}}</td>
+        <td>{{colecao.orcamento |  currency: 'BRL'}}</td>
+
+      </tr>
+
+    </tbody>
+  </table>
+</div>
