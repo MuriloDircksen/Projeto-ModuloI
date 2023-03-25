@@ -12,6 +12,7 @@ import { CadastroUsuarioComponent } from './pages/cadastro-usuario/cadastro-usua
 import { EsqueciSenhaComponent } from './pages/esqueci-senha/esqueci-senha.component';
 import { MenuLateralComponent } from './components/menu-lateral/menu-lateral.component';
 import { HeaderComponent } from './components/header/header.component';
+import { CardsComponent } from './components/cards/cards.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HeaderComponent } from './components/header/header.component';
     CadastroUsuarioComponent,
     EsqueciSenhaComponent,
     MenuLateralComponent,
-    HeaderComponent
+    HeaderComponent,
+    CardsComponent
   ],
   imports: [
     BrowserModule,
