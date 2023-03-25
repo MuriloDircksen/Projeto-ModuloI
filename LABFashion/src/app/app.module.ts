@@ -11,6 +11,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { CadastroUsuarioComponent } from './pages/cadastro-usuario/cadastro-usuario.component';
 import { EsqueciSenhaComponent } from './pages/esqueci-senha/esqueci-senha.component';
 import { MenuLateralComponent } from './components/menu-lateral/menu-lateral.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { MenuLateralComponent } from './components/menu-lateral/menu-lateral.com
     LoginComponent,
     CadastroUsuarioComponent,
     EsqueciSenhaComponent,
-    MenuLateralComponent
+    MenuLateralComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

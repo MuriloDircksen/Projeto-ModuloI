@@ -1,0 +1,61 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white">
+  <!-- Container wrapper -->
+  <div class="container-fluid">
+    <!-- Toggle button -->
+    <button></button>
+
+
+     <!-- Right elements -->
+    <div class="d-flex align-items-center">
+      <!-- Icon -->
+      <a class="link-secondary me-3" href="#">
+        <i class="fas fa-shopping-cart"></i>
+      </a>
+
+      <!-- Notifications -->
+      <div class="dropdown">
+
+
+        <img src="../../../assets/bell.svg">
+
+
+
+      </div>
+      <!-- Avatar -->
+      <div class="dropdown">
+        <a
+          class="dropdown-toggle d-flex align-items-center hidden-arrow"
+
+          id="navbarDropdownMenuAvatar"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <img
+            src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
+            class="rounded-circle"
+            height="25"
+            alt="Black and White Portrait of a Man"
+            loading="lazy"
+          />
+        </a>
+       <ul class="dropdown-menu dropdown-menu-white text-small shadow">
+                      <li><a class="dropdown-item" href="#">Conta</a></li>
+                      <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                      <li><a class="dropdown-item" href="#">Configurações</a></li>
+
+                      <li>
+                          <hr class="dropdown-divider">
+                      </li>
+                      <li><a class="dropdown-item" routerLink="/login" (click)="sair()">Sair</a></li>
+                  </ul>
+      </div>
+    </div>
+
+  </div>
+
+</nav>
+
