@@ -15,4 +15,20 @@ export class ColecaoService {
   getColecoes(): Observable<IColecao[]>{
     return this.http.get<IColecao[]>(this.url);
   }
+
+  getColecao(id: number): Observable<IColecao> {
+    return this.http.get<IColecao>(`${this.url}/${id}`)
+  }
+
+  criarColecao(colecao: any): Observable<any> {
+    return this.http.post<any>(this.url, colecao);
+  }
+
+  atualizarColecao(colecao: IColecao): Observable<IColecao> {
+    return this.http.put<IColecao>(`${this.url}/${colecao.id}`, colecao);
+  }
+
+  excluirColecao(id: number): Observable<IColecao> {
+    return this.http.delete<any>(`${this.url}/${id}`);
+  }
 }

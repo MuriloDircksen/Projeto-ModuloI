@@ -4,19 +4,35 @@
   padding-left: 20px;
   padding-top: 20px;
 }
-td{
-  color: #B4B6C1;
-  padding: 15px;
-}
 
-.container-cabecalho{
-  display: flex;
-  justify-content: space-between;
+.container{
+  color: #B4B6C1;
 }
 
 button{
-  background-color: #0073CF;
-  color: white;
+
   width: 150px;
   border-radius: 6px;
+}
+
+.imagemModa{
+  display: flex;
+  justify-content: center;
+}
+
+.botaoCancelar{
+  background-color: #ebebeb;
+  color: #B4B6C1;
+}
+
+.botoesPadrao{
+  display: flex;
+  justify-content: flex-end;
+  gap:20px
+}
+
+.botaoExcluir{
+
+  display: flex;
+  justify-content: flex-start;
 }

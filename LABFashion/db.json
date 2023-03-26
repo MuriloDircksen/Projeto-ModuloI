@@ -19,16 +19,16 @@
   ],
   "colecoes": [
     {
-      "colecaoId": 1,
-      "nomeColecao": "Adidas",
+      "id": 1,
+      "nomeColecao": "Outono/Inverno",
       "responsavelColecao": "Murilo",
       "estacao": "inverno",
-      "marca": "adidas",
-      "orcamento": 9600,
+      "marca": "Adidas",
+      "orcamento": 9500,
       "lancamento": "2023",
       "modelos": [
         {
-          "modeloId": 1,
+          "id": 1,
           "nomeModelo": "Camiseta sport",
           "responsavelModelo": "Murilo",
           "tipo": "camisa",
@@ -37,7 +37,7 @@
           "estampa": "true"
         },
         {
-          "modeloId": 2,
+          "id": 2,
           "nomeModelo": "Camiseta sport",
           "responsavelModelo": "Murilo",
           "tipo": "camisa",
@@ -48,7 +48,7 @@
       ]
     },
     {
-      "colecaoId": 2,
+      "id": 2,
       "nomeColecao": "Adidas",
       "responsavelColecao": "Murilo",
       "estacao": "inverno",
@@ -58,7 +58,7 @@
       "modelos": []
     },
     {
-      "colecaoId": 3,
+      "id": 3,
       "nomeColecao": "Adidas",
       "responsavelColecao": "Murilo",
       "estacao": "inverno",
@@ -67,7 +67,7 @@
       "lancamento": "2023",
       "modelos": [
         {
-          "modeloId": 3,
+          "id": 3,
           "nomeModelo": "Camiseta sport",
           "responsavelModelo": "Murilo",
           "tipo": "camisa",
@@ -78,7 +78,7 @@
       ]
     },
     {
-      "colecaoId": 4,
+      "id": 4,
       "nomeColecao": "Adidas",
       "responsavelColecao": "Murilo",
       "estacao": "inverno",
@@ -88,7 +88,7 @@
       "modelos": []
     },
     {
-      "colecaoId": 5,
+      "id": 5,
       "nomeColecao": "Adidas",
       "responsavelColecao": "Murilo",
       "estacao": "inverno",
@@ -97,7 +97,7 @@
       "lancamento": "2023",
       "modelos": [
         {
-          "modeloId": 4,
+          "id": 4,
           "nomeModelo": "Camiseta sport",
           "responsavelModelo": "Murilo",
           "tipo": "camisa",
@@ -108,7 +108,7 @@
       ]
     },
     {
-      "colecaoId": 6,
+      "id": 6,
       "nomeColecao": "Adidas",
       "responsavelColecao": "Murilo",
       "estacao": "inverno",

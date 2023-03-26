@@ -1,6 +1,6 @@
 export interface IModelo{
 
-  modeloId: number,
+  id?: number,
   nome: string,
   responsavel: string,
   tipo: string,

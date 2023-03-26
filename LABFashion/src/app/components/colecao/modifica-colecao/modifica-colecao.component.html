@@ -2,58 +2,66 @@
   <h5>{{titulo}}</h5>
 
 </div>
-<br><br>
+<br>
 
 <div class="fundo">
 
 
   <div class="container">
 
-    <form [formGroup]="formColecao">
+    <form [formGroup]="formColecao" *ngIf="formColecao">
 
-      <img src="../../../assets/Fill-51.png">
+
       <div class="container-quadro" >
-        <h2>Sign Up</h2>
-        <h6>Insira seus dados para criar uma conta</h6>
+
         <br>
-        <div  class="form-floating mt-3 mb-4">
-          <input formControlName="nome" type="email" class="form-control" id="floatingInput" placeholder="Nome">
-          <label for="floatingInput">Nome</label>
+        <div class="row">
+          <div  class="form-floating mt-3 mb-4 col-6">
+            <input formControlName="nomeColecao" type="text" class="form-control" id="floatingInput" placeholder="Nome coleção">
+            <label for="floatingInput">Nome Coleção</label>
+          </div>
+          <div  class="form-floating mt-3 mb-4 col-6">
+            <input formControlName="responsavelColecao" type="text" class="form-control" id="floatingInput" placeholder="Responsável Coleção">
+            <label for="floatingInput">Responsável Coleção</label>
+          </div>
         </div>
-        <div  class="form-floating mt-3 mb-4">
-          <input formControlName="empresa" type="text" class="form-control" id="floatingInput" placeholder="Empresa">
-          <label for="floatingInput">Empresa</label>
-        </div>
-        <div  class="form-floating mt-3 mb-4">
-          <input formControlName="cnpj" type="text" class="form-control" id="floatingInput" placeholder="CNPJ">
-          <label for="floatingInput">CNPJ</label>
-        </div>
-        <div  class="form-floating mt-3 mb-4">
-          <input formControlName="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-          <label for="floatingInput">Informe seu e-mail</label>
+        <div class="row">
+          <div  class="form-floating mt-3 mb-4 col-6">
+            <input formControlName="estacao" type="text" class="form-control" id="floatingInput" placeholder="Estação">
+            <label for="floatingInput">Estação</label>
+          </div>
+          <div  class="form-floating mt-3 mb-4 col-6">
+            <input formControlName="marca" type="text" class="form-control" id="floatingInput" placeholder="Marca">
+            <label for="floatingInput">Marca</label>
+          </div>
         </div>
 
         <div  class="row">
           <div class="form-floating mt-3 mb-4 col-6 ">
-            <input formControlName="senha" type="password" class="form-control" id="floatingInput" placeholder="Senha">
-            <label for="floatingInput">Senha</label>
+            <input formControlName="orcamento" type="number" class="form-control" id="floatingInput" placeholder="Orçamento">
+            <label for="floatingInput">Orçamento</label>
           </div>
           <div class="form-floating mt-3 mb-4 col-6 ">
-            <input formControlName="confirmaSenha" type="password" class="form-control" id="floatingInput" placeholder="Confirmar Senha">
-            <label for="floatingInput">Confirma senha</label>
+            <input formControlName="lancamento" type="text" class="form-control" id="floatingInput" placeholder="Lançamento">
+            <label for="floatingInput">Lançamento</label>
           </div>
         </div>
       </div>
     </form>
   </div>
-  <img src="../../../../assets/cliclo-moda.png">
+  <div  class="imagemModa">
+    <img src="../../../../assets/cliclo-moda.png">
+  </div>
+  <br>
   <div>
     <div>
-      <button type="submit" >Excluir</button>
-    </div>
-    <div>
-      <button type="submit" >Cancelar</button>
-      <button type="submit" >Atualizar</button>
+      <div class="botaoExcluir" *ngIf="colecaoId !== 'criar'">
+        <button type="submit" class="btn btn-danger" (click)="excluiColecao()">Excluir</button>
+      </div>
+      <div class="botoesPadrao">
+        <button type="submit" (click)="retornaPaginaColecao()" class="btn btn-light botaoCancelar">Cancelar</button>
+        <button type="submit" (click)="modificaColecao()" class="btn btn-primary">Atualizar</button>
+      </div>
     </div>
   </div>
 </div>

@@ -1,6 +1,6 @@
 import { IModelo } from './modelo';
 export interface IColecao{
-  colecaoId: number,
+  id?: number,
   nomeColecao: string,
   responsavelColecao: string,
   estacao: string,
