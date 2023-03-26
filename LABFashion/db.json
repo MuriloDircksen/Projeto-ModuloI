@@ -32,7 +32,7 @@
           "nomeModelo": "Camiseta sport",
           "responsavelModelo": "Murilo",
           "tipo": "camisa",
-          "colecao": "1",
+          "colecao": "Outono/Inverno",
           "bordado": "true",
           "estampa": "true"
         },
@@ -41,7 +41,7 @@
           "nomeModelo": "Camiseta sport",
           "responsavelModelo": "Murilo",
           "tipo": "camisa",
-          "colecao": "1",
+          "colecao": "Outono/Inverno",
           "bordado": "true",
           "estampa": "true"
         }
@@ -71,7 +71,7 @@
           "nomeModelo": "Camiseta sport",
           "responsavelModelo": "Murilo",
           "tipo": "camisa",
-          "colecao": "1",
+          "colecao": "Adidas",
           "bordado": "true",
           "estampa": "true"
         }
@@ -101,7 +101,7 @@
           "nomeModelo": "Camiseta sport",
           "responsavelModelo": "Murilo",
           "tipo": "camisa",
-          "colecao": "1",
+          "colecao": "Adidas",
           "bordado": "true",
           "estampa": "true"
         }

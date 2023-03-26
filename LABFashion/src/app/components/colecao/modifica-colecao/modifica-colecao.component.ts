@@ -127,7 +127,6 @@ export class ModificaColecaoComponent implements OnInit{
 
   excluiColecao(){
 
-
     if(Object.keys(this.colecao.modelos).length === 0){
       this.colecaoService.excluirColecao(this.colecaoId).subscribe();
       this.retornaPaginaColecao();

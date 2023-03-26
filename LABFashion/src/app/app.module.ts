@@ -16,6 +16,7 @@ import { CardsComponent } from './components/cards/cards.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ColecaoComponent } from './components/colecao/colecao.component';
 import { ModificaColecaoComponent } from './components/colecao/modifica-colecao/modifica-colecao.component';
+import { ModeloComponent } from './components/modelo/modelo/modelo.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ModificaColecaoComponent } from './components/colecao/modifica-colecao/
     CardsComponent,
     DashboardComponent,
     ColecaoComponent,
-    ModificaColecaoComponent
+    ModificaColecaoComponent,
+    ModeloComponent
   ],
   imports: [
     BrowserModule,

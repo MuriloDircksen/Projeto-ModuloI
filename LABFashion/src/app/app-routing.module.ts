@@ -1,3 +1,4 @@
+import { ModeloComponent } from './components/modelo/modelo/modelo.component';
 import { ModificaColecaoComponent } from './components/colecao/modifica-colecao/modifica-colecao.component';
 import { ColecaoComponent } from './components/colecao/colecao.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -54,6 +55,10 @@ const routes: Routes = [
       {
         path: 'colecao/criar',
         component: ModificaColecaoComponent
+      },
+      {
+        path:'modelo',
+        component: ModeloComponent
       }
 
     ]
