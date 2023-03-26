@@ -25,11 +25,7 @@ export class ColecaoService {
     return this.http.post<any>(this.url, colecao);
   }
 
-  criarModelo(modelo: any , colecao: any ): Observable<any>{
-    return this.http.post<any>(`${this.url}/${colecao.id}/modelos`, modelo);
-  }
-
-  atualizarColecao(colecao: IColecao): Observable<IColecao> {
+   atualizarColecao(colecao: IColecao): Observable<IColecao> {
     return this.http.put<IColecao>(`${this.url}/${colecao.id}`, colecao);
   }
 

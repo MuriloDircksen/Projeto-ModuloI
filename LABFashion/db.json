@@ -56,7 +56,15 @@
       "orcamento": 10000,
       "lancamento": "2023",
       "modelos": [
-
+        {
+          "id": 5,
+          "nomeModelo": "Boné adidas",
+          "responsavelModelo": "Murilo",
+          "tipo": "boné",
+          "colecao": "Adidas",
+          "bordado": "sim",
+          "estampa": "sim"
+        }
       ]
     },
     {

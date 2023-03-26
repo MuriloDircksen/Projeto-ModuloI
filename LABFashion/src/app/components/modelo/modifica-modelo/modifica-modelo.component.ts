@@ -16,6 +16,7 @@ export class ModificaModeloComponent {
   formModelo!: FormGroup
   modelo!: IModelo;
   listaColecoes!: any[] | IColecao[];
+  listaModelos: any[] = [];
 
   constructor(private activatedRoute: ActivatedRoute, private colecoesService: ColecaoService,
     private formBuilder: FormBuilder, private router: Router){}
@@ -92,12 +93,23 @@ export class ModificaModeloComponent {
     })
   }
 
+  defineId(){
+    this.listaColecoes.map( listaColecoes => {
+
+      for(let modelo of listaColecoes.modelos){
+        this.listaModelos.push(modelo);
+      }
+    })
+    return Object.keys(this.listaModelos).length;
+  }
+
    modificaModelo(){
     if(this.modeloId === "criar"){
 
 
-      const modelo: any= {
 
+      const modelo: any= {
+        id: this.defineId() + 1,
         nomeModelo: this.nomeModelo,
         responsavelModelo: this.nomeResponsavel,
         tipo: this.tipoModelo,
@@ -105,12 +117,13 @@ export class ModificaModeloComponent {
         bordado: this.bordado,
         estampa: this.estampa
       }
+      console.log(modelo);
 
 
       const atualizaColecao = this.listaColecoes.find(colecao => colecao.nomeColecao==this.nomeColecao)
       atualizaColecao.modelos.push(modelo);
 
-      this.colecoesService.criarModelo(modelo, atualizaColecao).subscribe();
+      this.colecoesService.atualizarColecao(atualizaColecao).subscribe();
       this.router.navigate(['/modelo']);
       return;
     }
