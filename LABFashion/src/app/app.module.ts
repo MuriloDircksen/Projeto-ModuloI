@@ -17,6 +17,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ColecaoComponent } from './components/colecao/colecao.component';
 import { ModificaColecaoComponent } from './components/colecao/modifica-colecao/modifica-colecao.component';
 import { ModeloComponent } from './components/modelo/modelo/modelo.component';
+import { ModificaModeloComponent } from './components/modelo/modifica-modelo/modifica-modelo.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ModeloComponent } from './components/modelo/modelo/modelo.component';
     DashboardComponent,
     ColecaoComponent,
     ModificaColecaoComponent,
-    ModeloComponent
+    ModeloComponent,
+    ModificaModeloComponent
   ],
   imports: [
     BrowserModule,

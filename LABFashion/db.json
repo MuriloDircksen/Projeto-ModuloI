@@ -33,8 +33,8 @@
           "responsavelModelo": "Murilo",
           "tipo": "camisa",
           "colecao": "Outono/Inverno",
-          "bordado": "true",
-          "estampa": "true"
+          "bordado": "não",
+          "estampa": "não"
         },
         {
           "id": 2,
@@ -42,8 +42,8 @@
           "responsavelModelo": "Murilo",
           "tipo": "camisa",
           "colecao": "Outono/Inverno",
-          "bordado": "true",
-          "estampa": "true"
+          "bordado": "sim",
+          "estampa": "não"
         }
       ]
     },
@@ -55,11 +55,13 @@
       "marca": "adidas",
       "orcamento": 10000,
       "lancamento": "2023",
-      "modelos": []
+      "modelos": [
+
+      ]
     },
     {
       "id": 3,
-      "nomeColecao": "Adidas",
+      "nomeColecao": "Adidas2",
       "responsavelColecao": "Murilo",
       "estacao": "inverno",
       "marca": "adidas",
@@ -71,15 +73,15 @@
           "nomeModelo": "Camiseta sport",
           "responsavelModelo": "Murilo",
           "tipo": "camisa",
-          "colecao": "Adidas",
-          "bordado": "true",
-          "estampa": "true"
+          "colecao": "Adidas2",
+          "bordado": "não",
+          "estampa": "sim"
         }
       ]
     },
     {
       "id": 4,
-      "nomeColecao": "Adidas",
+      "nomeColecao": "Adidas3",
       "responsavelColecao": "Murilo",
       "estacao": "inverno",
       "marca": "adidas",
@@ -89,7 +91,7 @@
     },
     {
       "id": 5,
-      "nomeColecao": "Adidas",
+      "nomeColecao": "Adidas4",
       "responsavelColecao": "Murilo",
       "estacao": "inverno",
       "marca": "adidas",
@@ -101,15 +103,15 @@
           "nomeModelo": "Camiseta sport",
           "responsavelModelo": "Murilo",
           "tipo": "camisa",
-          "colecao": "Adidas",
-          "bordado": "true",
-          "estampa": "true"
+          "colecao": "Adidas4",
+          "bordado": "sim",
+          "estampa": "sim"
         }
       ]
     },
     {
       "id": 6,
-      "nomeColecao": "Adidas",
+      "nomeColecao": "Adidas5",
       "responsavelColecao": "Murilo",
       "estacao": "inverno",
       "marca": "adidas",

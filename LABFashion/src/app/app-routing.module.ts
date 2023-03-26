@@ -10,6 +10,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ContentComponent } from './layouts/content/content.component';
 import { FullComponent } from './layouts/full/full.component';
 import { LoginComponent } from './pages/login/login.component';
+import { ModificaModeloComponent } from './components/modelo/modifica-modelo/modifica-modelo.component';
 
 const routes: Routes = [
   {
@@ -59,6 +60,15 @@ const routes: Routes = [
       {
         path:'modelo',
         component: ModeloComponent
+      }
+      ,
+      {
+        path:'modelo/:id',
+        component: ModificaModeloComponent
+      },
+      {
+        path: 'modelo/criar',
+        component: ModificaModeloComponent
       }
 
     ]

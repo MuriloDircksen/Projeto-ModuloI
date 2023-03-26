@@ -1,3 +1,4 @@
+import { IModelo } from './../../models/modelo';
 import { IColecao } from './../../models/colecao';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
@@ -22,6 +23,10 @@ export class ColecaoService {
 
   criarColecao(colecao: any): Observable<any> {
     return this.http.post<any>(this.url, colecao);
+  }
+
+  criarModelo(modelo: any , colecao: any ): Observable<any>{
+    return this.http.post<any>(`${this.url}/${colecao.id}/modelos`, modelo);
   }
 
   atualizarColecao(colecao: IColecao): Observable<IColecao> {
