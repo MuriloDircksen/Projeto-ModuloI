@@ -81,8 +81,8 @@
       "tipo": "camisa",
       "colecao": "Outono/Inverno",
       "colecaoId": 1,
-      "bordado": "não",
-      "estampa": "não"
+      "bordado": "nao",
+      "estampa": "nao"
     },
     {
       "id": 2,
@@ -92,7 +92,7 @@
       "colecao": "Outono/Inverno",
       "colecaoId": 1,
       "bordado": "sim",
-      "estampa": "não"
+      "estampa": "nao"
     },
     {
       "id": 3,
@@ -101,7 +101,7 @@
       "tipo": "camisa",
       "colecao": "Adidas2",
       "colecaoId": 3,
-      "bordado": "não",
+      "bordado": "nao",
       "estampa": "sim"
     },
     {
@@ -128,8 +128,8 @@
       "nomeModelo": "Boné adidas",
       "responsavelModelo": "Murilo",
       "tipo": "boné",
-      "colecao": "Adidas5",
-      "colecaoId": 6,
+      "colecao": "Adidas4",
+      "colecaoId": 5,
       "bordado": "nao",
       "estampa": "sim",
       "id": 6

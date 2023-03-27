@@ -24,9 +24,10 @@ export class ModificaModeloComponent {
 
   ngOnInit(): void {
     this.modeloId = this.activatedRoute.snapshot.paramMap.get('id')
-    this.formModelo;
+    //this.formModelo;
     this.buscaColecoes();
     this.buscaModelos();
+    this.buscaModelo();
 
   }
 
@@ -35,10 +36,11 @@ export class ModificaModeloComponent {
     if(this.modeloId == "criar"){
       this.titulo = "Criar Modelo"
       this.criaFormCadastro();
+
       return;
     }
     this.titulo = "Editar Modelo"
-    this.buscaModelo();
+
     this.criaFormEdicao();
 
 
@@ -51,20 +53,21 @@ export class ModificaModeloComponent {
       nomeColecao: new FormControl('', Validators.required),
       nomeResponsavel: new FormControl('', [Validators.required]),
       bordado: new FormControl('', Validators.required),
-      estampa: new FormControl('', Validators.required),
+      estampa: new FormControl('', Validators.required)
     });
   }
 
   criaFormEdicao(){
     this.formModelo = this.formBuilder.group({
-      nomeModelo: new FormControl(this.modelo.nomeModelo, Validators.required),
-      tipoModelo: new FormControl(this.modelo.tipo, [Validators.required]),
-      nomeColecao: new FormControl(this.modelo.colecao, Validators.required),
-      nomeResponsavel: new FormControl(this.modelo.responsavel, [Validators.required]),
-      bordado: new FormControl(this.modelo.bordado, Validators.required),
-      estampa: new FormControl(this.modelo.estampa, Validators.required),
+      nomeModelo: new FormControl(this.modelo.nomeModelo || '', Validators.required),
+      tipoModelo: new FormControl(this.modelo.tipo || '', [Validators.required]),
+      nomeColecao: new FormControl(this.modelo.colecao || '', Validators.required),
+      nomeResponsavel: new FormControl(this.modelo.responsavelModelo || '', [Validators.required]),
+      bordado: new FormControl(this.modelo.bordado || '', Validators.required),
+      estampa: new FormControl(this.modelo.estampa || '', Validators.required)
     });
   }
+
 
 
   get nomeModelo(){
@@ -91,14 +94,14 @@ export class ModificaModeloComponent {
       this.listaColecoes = data;
 
     })
+
   }
   buscaModelos(){
-
     this.modeloService.getModelos().subscribe((data) =>{
       this.listaModelos = data;
 
-      this.verificaTemId();
     })
+
   }
 
   buscaModelo(){
@@ -141,13 +144,13 @@ export class ModificaModeloComponent {
     }
     const modelo: any= {
       id: this.modeloId,
-      nomeColecao: this.nomeColecao,
-      responsavelColecao: this.nomeResponsavel,
-      tipo: this.tipoModelo,
-      colecao: this.nomeColecao,
-      colecaoId: this.encontraColeçãoId(),
-      bordado: this.bordado,
-      estampa: this.estampa
+      nomeModelo: this.nomeModelo,
+        responsavelModelo: this.nomeResponsavel,
+        tipo: this.tipoModelo,
+        colecao: this.nomeColecao,
+        colecaoId: this.encontraColeçãoId(),
+        bordado: this.bordado,
+        estampa: this.estampa
     }
 
     this.modeloService.atualizarModelo(modelo).subscribe();
@@ -155,16 +158,11 @@ export class ModificaModeloComponent {
 
   }
 
- /*  excluiColecao(){
+ excluiModelo(){
 
-    if(Object.keys(this.colecao.modelos).length === 0){
-      this.colecaoService.excluirColecao(this.colecaoId).subscribe();
-      this.retornaPaginaColecao();
-      return;
-    }
-    alert("Impossível excluir coleções com modelos associados!")
+    this.modeloService.excluirModelo(this.modeloId).subscribe();
     this.retornaPaginaColecao();
-  } */
+  }
 
   retornaPaginaColecao(){
     this.router.navigate(['/modelo']);
