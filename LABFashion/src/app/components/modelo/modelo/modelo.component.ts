@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { IColecao } from 'src/app/models/colecao';
 import { ColecaoService } from 'src/app/service/colecao/colecao.service';
+import { ModeloService } from 'src/app/service/modelo/modelo.service';
 
 @Component({
   selector: 'app-modelo',
@@ -9,42 +10,23 @@ import { ColecaoService } from 'src/app/service/colecao/colecao.service';
   styleUrls: ['./modelo.component.scss']
 })
 export class ModeloComponent {
-  listaColecoes!: any[] | IColecao[];
-  listaModelos: any[] = [];
 
-  constructor(private colecaoService: ColecaoService, private router: Router){}
+  listaModelos!: any[] ;
+
+  constructor(private modeloService: ModeloService, private router: Router){}
 
   ngOnInit(): void {
-    this.buscaColecoes();
+    this.buscaModelos();
   }
 
-  buscaColecoes(){
-    this.colecaoService.getColecoes().subscribe((data) => {
-      this.listaColecoes = data;
-      this.recuperaDadosModelos();
+  buscaModelos(){
+    this.modeloService.getModelos().subscribe((data) => {
+      this.listaModelos = data;
+      this.listaModelos.sort((a,b) => (a.id > b.id) ? 1 : ((b.id > a.id ? -1 : 0)));
+
     })
   }
-
-  recuperaDadosModelos(){
-    let listaModelos : any[]=[];
-    this.listaColecoes.map( listaColecoes => {
-      let qtdModelos = Object.keys(listaColecoes.modelos).length;
-      if( qtdModelos=== 0){
-        return;
-      }
-
-      for(let modelo of listaColecoes.modelos){
-        this.listaModelos.push(modelo);
-      }
-
-    })
-
-    this.listaModelos.sort((a,b) => (a.id > b.id) ? 1 : ((b.id > a.id ? -1 : 0)));
-
-
-  }
-
-  criaColecao(){
+  criaModelo(){
     this.router.navigate(['/modelo/criar'])
   }
 

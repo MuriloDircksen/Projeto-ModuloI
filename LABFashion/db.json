@@ -25,27 +25,7 @@
       "estacao": "inverno",
       "marca": "Adidas",
       "orcamento": 9500,
-      "lancamento": "2023",
-      "modelos": [
-        {
-          "id": 1,
-          "nomeModelo": "Camiseta sport",
-          "responsavelModelo": "Murilo",
-          "tipo": "camisa",
-          "colecao": "Outono/Inverno",
-          "bordado": "não",
-          "estampa": "não"
-        },
-        {
-          "id": 2,
-          "nomeModelo": "Camiseta sport",
-          "responsavelModelo": "Murilo",
-          "tipo": "camisa",
-          "colecao": "Outono/Inverno",
-          "bordado": "sim",
-          "estampa": "não"
-        }
-      ]
+      "lancamento": "2023"
     },
     {
       "id": 2,
@@ -54,18 +34,7 @@
       "estacao": "inverno",
       "marca": "adidas",
       "orcamento": 10000,
-      "lancamento": "2023",
-      "modelos": [
-        {
-          "id": 5,
-          "nomeModelo": "Boné adidas",
-          "responsavelModelo": "Murilo",
-          "tipo": "boné",
-          "colecao": "Adidas",
-          "bordado": "sim",
-          "estampa": "sim"
-        }
-      ]
+      "lancamento": "2023"
     },
     {
       "id": 3,
@@ -74,18 +43,7 @@
       "estacao": "inverno",
       "marca": "adidas",
       "orcamento": 500,
-      "lancamento": "2023",
-      "modelos": [
-        {
-          "id": 3,
-          "nomeModelo": "Camiseta sport",
-          "responsavelModelo": "Murilo",
-          "tipo": "camisa",
-          "colecao": "Adidas2",
-          "bordado": "não",
-          "estampa": "sim"
-        }
-      ]
+      "lancamento": "2023"
     },
     {
       "id": 4,
@@ -94,8 +52,7 @@
       "estacao": "inverno",
       "marca": "adidas",
       "orcamento": 2300,
-      "lancamento": "2023",
-      "modelos": []
+      "lancamento": "2023"
     },
     {
       "id": 5,
@@ -104,18 +61,7 @@
       "estacao": "inverno",
       "marca": "adidas",
       "orcamento": 7000,
-      "lancamento": "2023",
-      "modelos": [
-        {
-          "id": 4,
-          "nomeModelo": "Camiseta sport",
-          "responsavelModelo": "Murilo",
-          "tipo": "camisa",
-          "colecao": "Adidas4",
-          "bordado": "sim",
-          "estampa": "sim"
-        }
-      ]
+      "lancamento": "2023"
     },
     {
       "id": 6,
@@ -124,8 +70,69 @@
       "estacao": "inverno",
       "marca": "adidas",
       "orcamento": 6500,
-      "lancamento": "2023",
-      "modelos": []
+      "lancamento": "2023"
+    }
+  ],
+  "modelos": [
+    {
+      "id": 1,
+      "nomeModelo": "Camiseta sport",
+      "responsavelModelo": "Murilo",
+      "tipo": "camisa",
+      "colecao": "Outono/Inverno",
+      "colecaoId": 1,
+      "bordado": "não",
+      "estampa": "não"
+    },
+    {
+      "id": 2,
+      "nomeModelo": "Camiseta sport",
+      "responsavelModelo": "Murilo",
+      "tipo": "camisa",
+      "colecao": "Outono/Inverno",
+      "colecaoId": 1,
+      "bordado": "sim",
+      "estampa": "não"
+    },
+    {
+      "id": 3,
+      "nomeModelo": "Camiseta sport",
+      "responsavelModelo": "Murilo",
+      "tipo": "camisa",
+      "colecao": "Adidas2",
+      "colecaoId": 3,
+      "bordado": "não",
+      "estampa": "sim"
+    },
+    {
+      "id": 4,
+      "nomeModelo": "Camiseta sport",
+      "responsavelModelo": "Murilo",
+      "tipo": "camisa",
+      "colecao": "Adidas4",
+      "colecaoId": 5,
+      "bordado": "sim",
+      "estampa": "sim"
+    },
+    {
+      "id": 5,
+      "nomeModelo": "Boné adidas",
+      "responsavelModelo": "Murilo",
+      "tipo": "boné",
+      "colecao": "Adidas",
+      "colecaoId": 2,
+      "bordado": "sim",
+      "estampa": "sim"
+    },
+    {
+      "nomeModelo": "Boné adidas",
+      "responsavelModelo": "Murilo",
+      "tipo": "boné",
+      "colecao": "Adidas5",
+      "colecaoId": 6,
+      "bordado": "nao",
+      "estampa": "sim",
+      "id": 6
     }
   ]
 }

@@ -1,3 +1,4 @@
+import { ModeloService } from './../../../service/modelo/modelo.service';
 import { IColecao } from './../../../models/colecao';
 import { ColecaoService } from './../../../service/colecao/colecao.service';
 import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
@@ -15,14 +16,16 @@ export class ModificaColecaoComponent implements OnInit{
   colecaoId!: any;
   formColecao!: FormGroup
   colecao!: IColecao;
+  listaModelos!: any[];
 
   constructor(private activatedRoute: ActivatedRoute, private colecaoService: ColecaoService,
-    private formBuilder: FormBuilder, private router: Router){}
+    private formBuilder: FormBuilder, private router: Router, private modeloService: ModeloService){}
 
   ngOnInit(): void {
     this.colecaoId = this.activatedRoute.snapshot.paramMap.get('id')
     this.formColecao;
     this.buscaColecao();
+    this.retornaModelos();
 
   }
 
@@ -101,12 +104,12 @@ export class ModificaColecaoComponent implements OnInit{
         marca: this.marca,
         orcamento: parseFloat(this.orcamento),
         lancamento: this.lancamento,
-        modelos: []
+
       }
-      console.log(colecao);
+
 
       this.colecaoService.criarColecao(colecao).subscribe();
-      this.router.navigate(['/colecao']);
+      this.retornaPaginaColecao();
       return;
     }
     const colecao: any= {
@@ -117,17 +120,37 @@ export class ModificaColecaoComponent implements OnInit{
       marca: this.marca,
       orcamento: parseFloat(this.orcamento),
       lancamento: this.lancamento,
-      modelos: this.colecao.modelos
+
     }
 
     this.colecaoService.atualizarColecao(colecao).subscribe();
     this.retornaPaginaColecao();
 
   }
+  retornaModelos(){
+
+    this.modeloService.getModelos().subscribe((data) =>{
+      this.listaModelos=data;
+
+    })
+
+  }
+
+  retornaTotalModelos(id: number){
+    let numeroModelos = 0;
+
+    this.listaModelos.map((date) =>{
+
+      if(date.colecaoId == id){
+        numeroModelos+=1;
+      }
+   })
+   return numeroModelos;
+  }
 
   excluiColecao(){
 
-    if(Object.keys(this.colecao.modelos).length === 0){
+     if(this.retornaTotalModelos(this.colecaoId) === 0){
       this.colecaoService.excluirColecao(this.colecaoId).subscribe();
       this.retornaPaginaColecao();
       return;

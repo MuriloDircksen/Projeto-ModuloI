@@ -4,6 +4,7 @@ import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms'
 import { ActivatedRoute, Router } from '@angular/router';
 import { IColecao } from 'src/app/models/colecao';
 import { ColecaoService } from 'src/app/service/colecao/colecao.service';
+import { ModeloService } from 'src/app/service/modelo/modelo.service';
 
 @Component({
   selector: 'app-modifica-modelo',
@@ -16,15 +17,16 @@ export class ModificaModeloComponent {
   formModelo!: FormGroup
   modelo!: IModelo;
   listaColecoes!: any[] | IColecao[];
-  listaModelos: any[] = [];
+  listaModelos!: any[];
 
-  constructor(private activatedRoute: ActivatedRoute, private colecoesService: ColecaoService,
-    private formBuilder: FormBuilder, private router: Router){}
+  constructor(private activatedRoute: ActivatedRoute, private modeloService: ModeloService,
+    private formBuilder: FormBuilder, private router: Router, private colecaoService: ColecaoService){}
 
   ngOnInit(): void {
     this.modeloId = this.activatedRoute.snapshot.paramMap.get('id')
     this.formModelo;
     this.buscaColecoes();
+    this.buscaModelos();
 
   }
 
@@ -36,7 +38,7 @@ export class ModificaModeloComponent {
       return;
     }
     this.titulo = "Editar Modelo"
-
+    this.buscaModelo();
     this.criaFormEdicao();
 
 
@@ -55,12 +57,12 @@ export class ModificaModeloComponent {
 
   criaFormEdicao(){
     this.formModelo = this.formBuilder.group({
-      nomeModelo: new FormControl('', Validators.required),
-      tipoModelo: new FormControl('', [Validators.required]),
-      nomeColecao: new FormControl('', Validators.required),
-      nomeResponsavel: new FormControl('', [Validators.required, Validators.maxLength(14)]),
-      bordado: new FormControl('', Validators.required),
-      estampa: new FormControl('', Validators.required),
+      nomeModelo: new FormControl(this.modelo.nomeModelo, Validators.required),
+      tipoModelo: new FormControl(this.modelo.tipo, [Validators.required]),
+      nomeColecao: new FormControl(this.modelo.colecao, Validators.required),
+      nomeResponsavel: new FormControl(this.modelo.responsavel, [Validators.required]),
+      bordado: new FormControl(this.modelo.bordado, Validators.required),
+      estampa: new FormControl(this.modelo.estampa, Validators.required),
     });
   }
 
@@ -85,61 +87,71 @@ export class ModificaModeloComponent {
   }
 
   buscaColecoes(){
-
-    this.colecoesService.getColecoes().subscribe((data) =>{
+    this.colecaoService.getColecoes().subscribe((data) =>{
       this.listaColecoes = data;
+
+    })
+  }
+  buscaModelos(){
+
+    this.modeloService.getModelos().subscribe((data) =>{
+      this.listaModelos = data;
 
       this.verificaTemId();
     })
   }
 
-  defineId(){
-    this.listaColecoes.map( listaColecoes => {
-
-      for(let modelo of listaColecoes.modelos){
-        this.listaModelos.push(modelo);
-      }
+  buscaModelo(){
+    if(this.modeloId == "criar"){
+      this.verificaTemId();
+      return;
+    }
+    this.modeloService.getModelo(parseFloat(this.modeloId)).subscribe((data)=>{
+      this.modelo = data;
+      this.verificaTemId();
     })
-    return Object.keys(this.listaModelos).length;
+  }
+
+  encontraColeçãoId(){
+    let colecaoId = 0;
+    this.listaColecoes.map((data) =>{
+      if(data.nomeColecao == this.nomeColecao){
+        colecaoId = data.id;
+      }
+    });
+    return colecaoId;
   }
 
    modificaModelo(){
     if(this.modeloId === "criar"){
 
-
-
       const modelo: any= {
-        id: this.defineId() + 1,
         nomeModelo: this.nomeModelo,
         responsavelModelo: this.nomeResponsavel,
         tipo: this.tipoModelo,
         colecao: this.nomeColecao,
+        colecaoId: this.encontraColeçãoId(),
         bordado: this.bordado,
         estampa: this.estampa
       }
-      console.log(modelo);
 
-
-      const atualizaColecao = this.listaColecoes.find(colecao => colecao.nomeColecao==this.nomeColecao)
-      atualizaColecao.modelos.push(modelo);
-
-      this.colecoesService.atualizarColecao(atualizaColecao).subscribe();
-      this.router.navigate(['/modelo']);
+      this.modeloService.criarModelo(modelo).subscribe();
+      this.retornaPaginaColecao();
       return;
     }
-    /* const colecao: any= {
-      id: this.colecao.id,
+    const modelo: any= {
+      id: this.modeloId,
       nomeColecao: this.nomeColecao,
-      responsavelColecao: this.responsavelColecao,
-      estacao: this.estacao,
-      marca: this.marca,
-      orcamento: parseFloat(this.orcamento),
-      lancamento: this.lancamento,
-      modelos: this.colecao.modelos
+      responsavelColecao: this.nomeResponsavel,
+      tipo: this.tipoModelo,
+      colecao: this.nomeColecao,
+      colecaoId: this.encontraColeçãoId(),
+      bordado: this.bordado,
+      estampa: this.estampa
     }
 
-    this.colecaoService.atualizarColecao(colecao).subscribe();
-    this.retornaPaginaColecao(); */
+    this.modeloService.atualizarModelo(modelo).subscribe();
+    this.retornaPaginaColecao();
 
   }
 

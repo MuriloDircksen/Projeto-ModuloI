@@ -23,7 +23,7 @@
         <td>{{colecao.nomeColecao}}</td>
         <td>{{colecao.responsavelColecao}}</td>
         <td>{{colecao.estacao}} {{colecao.lancamento}}</td>
-        <td>{{numeromodelos(colecao.modelos)}}</td>
+        <td>{{retornaTotalModelos(colecao.id)}}</td>
         <td>{{colecao.orcamento |  currency: 'BRL'}}</td>
 
       </tr>

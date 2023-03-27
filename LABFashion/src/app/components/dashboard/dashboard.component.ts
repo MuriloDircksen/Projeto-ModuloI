@@ -1,3 +1,5 @@
+import { IModelo } from './../../models/modelo';
+import { ModeloService } from './../../service/modelo/modelo.service';
 
 import { IColecao } from './../../models/colecao';
 import { ColecaoService } from './../../service/colecao/colecao.service';
@@ -14,9 +16,10 @@ export class DashboardComponent implements OnInit {
   maioresColecoes!: IColecao[];
   totalColecoes: number = 0;
   totalModelos: number = 0;
+  listaModelos!: any[];
   mediaOrcamentos: number = 0;
 
-  constructor(private colecoesService: ColecaoService){}
+  constructor(private colecoesService: ColecaoService, private modeloService: ModeloService){}
 
   ngOnInit(): void {
     this.buscaColeções();
@@ -27,7 +30,7 @@ export class DashboardComponent implements OnInit {
       this.listaColecoes = data;
       this.selecionaOrcamentosMaiores();
       this.totalColecoes = data.length;
-      this.retornaTotalModelos();
+      this.retornaModelos();
       this.retornaMediaOrcamentos();
 
     })
@@ -39,17 +42,27 @@ export class DashboardComponent implements OnInit {
 
   }
 
-  numeromodelos(modelo: any){
-    return modelo.length;
+  retornaModelos(){
+
+    this.modeloService.getModelos().subscribe((data) =>{
+      this.listaModelos=data;
+      this.totalModelos = data.length;
+
+    })
+
   }
 
-  retornaTotalModelos(){
+  retornaTotalModelos(id: number){
+    let numeroModelos = 0;
 
-    this.listaColecoes.map((date) =>{
 
-      this.totalModelos+= parseFloat(this.numeromodelos(date.modelos));
+    this.listaModelos.map((date) =>{
 
+      if(date.colecaoId == id){
+        numeroModelos+=1;
+      }
    })
+   return numeroModelos;
   }
 
   retornaMediaOrcamentos(){

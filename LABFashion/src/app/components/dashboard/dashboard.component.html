@@ -17,7 +17,7 @@
       <tr *ngFor="let colecao of maioresColecoes">
         <td>{{colecao.nomeColecao}}</td>
         <td>{{colecao.responsavelColecao}}</td>
-        <td>{{numeromodelos(colecao.modelos)}}</td>
+        <td>{{retornaTotalModelos(colecao.id)}}</td>
         <td>{{colecao.orcamento |  currency: 'BRL'}}</td>
       </tr>
 

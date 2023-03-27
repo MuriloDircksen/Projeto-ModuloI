@@ -1,10 +1,12 @@
 export interface IModelo{
 
   id: number,
-  nome: string,
+  nomeModelo: string,
   responsavel: string,
   tipo: string,
   colecao: number,
+  colecaoId: number,
   bordado: boolean,
   estampa: boolean
+
 }
