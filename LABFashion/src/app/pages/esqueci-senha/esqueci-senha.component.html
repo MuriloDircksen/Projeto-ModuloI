@@ -5,8 +5,13 @@
 
     <img src="../../../assets/logo.png">
     <div class="container-quadro" *ngIf="textoBotao !== 'Ir para login'; else outraPagina ">
-      <h2>Redefinir Senha</h2>
-      <h6>Digite o e-mail associado à sua conta e enviaremos instruções para redefinir sua senha</h6>
+      <div class="imagem">
+        <img src="../../../assets/seta-esquerda.png" alt="" routerLink="/login">
+      </div>
+      <div class="titulo">
+        <h2>Redefinir Senha</h2>
+        <h6>Digite o e-mail associado à sua conta e enviaremos instruções para redefinir sua senha</h6>
+      </div>
       <br>
       <div  class="form-floating mt-3 mb-4">
         <input formControlName="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">

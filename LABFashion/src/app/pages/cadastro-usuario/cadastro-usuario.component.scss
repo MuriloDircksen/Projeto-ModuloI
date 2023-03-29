@@ -41,3 +41,23 @@ h6, label, .texto{
  .acesso{
   text-decoration: none;
 }
+
+.titulo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+
+
+ }
+
+ .imagem{
+  display: flex;
+  align-items:center;
+  position: absolute;
+  justify-content: flex-start;
+  cursor: pointer;
+  top:20%;
+
+}
