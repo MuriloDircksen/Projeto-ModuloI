@@ -29,7 +29,7 @@
     },
     {
       "id": 2,
-      "nomeColecao": "Primaver/Verão",
+      "nomeColecao": "Primavera/Verão",
       "responsavelColecao": "Murilo",
       "estacao": "verão",
       "marca": "Adidas",
@@ -69,7 +69,7 @@
       "responsavelColecao": "Murilo",
       "estacao": "inverno",
       "marca": "Renner",
-      "orcamento": 6500,
+      "orcamento": 6700,
       "lancamento": "2023"
     }
   ],
@@ -109,9 +109,9 @@
       "nomeModelo": "Camiseta botão",
       "responsavelModelo": "Murilo",
       "tipo": "camisa",
-      "colecao": "Arrezo evidence",
-      "colecaoId": 5,
-      "bordado": "sim",
+      "colecao": "Primavera/Verão",
+      "colecaoId": 2,
+      "bordado": "nao",
       "estampa": "sim"
     },
     {
@@ -119,7 +119,7 @@
       "nomeModelo": "Boné Adidas",
       "responsavelModelo": "Murilo",
       "tipo": "boné",
-      "colecao": "Primaver/Verão",
+      "colecao": "Primavera/Verão",
       "colecaoId": 2,
       "bordado": "sim",
       "estampa": "sim"

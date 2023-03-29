@@ -59,12 +59,12 @@ export class ModificaModeloComponent {
 
   criaFormEdicao(){
     this.formModelo = this.formBuilder.group({
-      nomeModelo: new FormControl(this.modelo.nomeModelo || '', Validators.required),
-      tipoModelo: new FormControl(this.modelo.tipo || '', [Validators.required]),
-      nomeColecao: new FormControl(this.modelo.colecao || '', Validators.required),
-      nomeResponsavel: new FormControl(this.modelo.responsavelModelo || '', [Validators.required]),
-      bordado: new FormControl(this.modelo.bordado || '', Validators.required),
-      estampa: new FormControl(this.modelo.estampa || '', Validators.required)
+      nomeModelo: new FormControl(this.modelo.nomeModelo , Validators.required),
+      tipoModelo: new FormControl(this.modelo.tipo , [Validators.required]),
+      nomeColecao: new FormControl(this.modelo.colecao , Validators.required),
+      nomeResponsavel: new FormControl(this.modelo.responsavelModelo , [Validators.required]),
+      bordado: new FormControl(this.modelo.bordado , Validators.required),
+      estampa: new FormControl(this.modelo.estampa , Validators.required)
     });
   }
 
@@ -116,13 +116,14 @@ export class ModificaModeloComponent {
   }
 
   encontraColeçãoId(){
-    let colecaoId = 0;
-    this.listaColecoes.map((data) =>{
-      if(data.nomeColecao == this.nomeColecao){
-        colecaoId = data.id;
-      }
-    });
-    return colecaoId;
+    console.log(this.listaColecoes);
+    console.log(this.nomeColecao);
+
+
+   const colecaoId =  this.listaColecoes.find((data) => data.nomeColecao === this.nomeColecao);
+   console.log(colecaoId);
+
+   return colecaoId.id;
   }
 
    modificaModelo(){
@@ -137,7 +138,8 @@ export class ModificaModeloComponent {
         bordado: this.bordado,
         estampa: this.estampa
       }
-
+      console.log(this.encontraColeçãoId());
+      console.log(modelo);
       this.modeloService.criarModelo(modelo).subscribe();
       this.retornaPaginaColecao();
       return;
@@ -152,7 +154,8 @@ export class ModificaModeloComponent {
         bordado: this.bordado,
         estampa: this.estampa
     }
-
+    console.log(this.encontraColeçãoId());
+    console.log(modelo);
     this.modeloService.atualizarModelo(modelo).subscribe();
     this.retornaPaginaColecao();
 

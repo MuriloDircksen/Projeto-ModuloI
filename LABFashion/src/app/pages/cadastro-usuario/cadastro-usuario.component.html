@@ -1,7 +1,7 @@
 
 <div class="container">
 
-  <form [formGroup]="formUsuario" *ngIf="formUsuario">
+  <form [formGroup]="formUsuario" *ngIf="formUsuario" (ngSubmit)="onSubmit()">
 
     <img src="../../../assets/logo.png">
     <div class="container-quadro" >
@@ -38,7 +38,7 @@
 
 
 
-      <button (click)="onSubmit()" type="submit" [disabled]="!formUsuario.valid" class="btn btn-primary">Criar conta</button>
+      <button  type="submit" [disabled]="!formUsuario.valid" class="btn btn-primary">Criar conta</button>
     </div>
     <br>
     <a class="texto">Já possui cadastro?</a>
