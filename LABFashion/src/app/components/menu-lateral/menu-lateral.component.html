@@ -1,44 +1,39 @@
 <div class="container-fluid ">
   <div class="row flex-nowrap">
-      <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-white shadow">
-          <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100 ">
-              <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-black text-decoration-none">
-                <img src="../../../assets/Fill-51.png"> <span class="fs-5 d-none d-sm-inline">Audaces</span>
+    <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-white shadow">
+      <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100 ">
+
+        <hr><hr>
+          <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+            <li class="nav-item">
+              <a class="nav-link align-middle px-0">
+                <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span>
               </a>
-              <hr><hr>
-              <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-                  <li class="nav-item">
-                      <a class="nav-link align-middle px-0">
-                          <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a routerLink="/home" data-bs-toggle="collapse" class="nav-link px-0 align-middle" routerLinkActive="mudaFundoBotao ">
-                          <i class="fs-4 bi-speedometer2"></i> <span  class="ms-1 d-none d-sm-inline ">Dashboard</span> </a>
+            </li>
+            <li>
+              <a routerLink="/home" data-bs-toggle="collapse" class="nav-link px-0 align-middle" routerLinkActive="mudaFundoBotao ">
+              <i class="fs-4 bi-speedometer2"></i> <span  class="ms-1 d-none d-sm-inline ">Dashboard</span> </a>
+            </li>
+            <li>
+              <a routerLink="/colecao" class="nav-link px-0 align-middle" routerLinkActive="mudaFundoBotao">
+              <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Coleções</span></a>
+            </li>
+            <li>
+              <a routerLink="/modelo" data-bs-toggle="collapse" class="nav-link px-0 align-middle " routerLinkActive="mudaFundoBotao">
+              <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline">Modelos</span></a>
+            </li>
+            <li>
+              <a  data-bs-toggle="collapse" class="nav-link px-0 align-middle" routerLinkActive="mudaFundoBotao">
+              <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">Obter Ajuda</span> </a>
+            </li>
+            <li>
+              <a  class="nav-link px-0 align-middle" routerLinkActive="mudaFundoBotao">
+              <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Comentários</span> </a>
+            </li>
+          </ul>
+          <hr>
 
-                  </li>
-                  <li>
-                      <a routerLink="/colecao" class="nav-link px-0 align-middle" routerLinkActive="mudaFundoBotao">
-                          <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Coleções</span></a>
-                  </li>
-                  <li>
-                      <a routerLink="/modelo" data-bs-toggle="collapse" class="nav-link px-0 align-middle " routerLinkActive="mudaFundoBotao">
-                          <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline">Modelos</span></a>
-
-                  </li>
-                  <li>
-                      <a  data-bs-toggle="collapse" class="nav-link px-0 align-middle" routerLinkActive="mudaFundoBotao">
-                          <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">Obter Ajuda</span> </a>
-
-                  </li>
-                  <li>
-                      <a  class="nav-link px-0 align-middle" routerLinkActive="mudaFundoBotao">
-                          <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Comentários</span> </a>
-                  </li>
-              </ul>
-              <hr>
-
-          </div>
+        </div>
       </div>
       <div class="col py-3 corFundo">
          <router-outlet></router-outlet>

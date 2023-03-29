@@ -6,4 +6,24 @@
 }
 span{
   color: #B4B6C1;
+  font-size: 10px;
 }
+
+img{
+  width: 15px;
+  height: 15px;
+}
+
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.comparado{
+  display: flex;
+  justify-content: flex-end;
+}
+.corVerde{
+  color: green;
+}
+

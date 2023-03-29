@@ -1,9 +1,4 @@
 
-body{
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
-}
 .container-quadro{
   border-radius: 1px;
   background-color: white;
@@ -24,6 +19,7 @@ img{
   text-align: center;
   padding-bottom: 20px;
   width: 100%;
+  max-width: 100%;
 
 }
 

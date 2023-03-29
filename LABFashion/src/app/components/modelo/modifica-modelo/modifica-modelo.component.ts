@@ -24,7 +24,7 @@ export class ModificaModeloComponent {
 
   ngOnInit(): void {
     this.modeloId = this.activatedRoute.snapshot.paramMap.get('id')
-    //this.formModelo;
+    this.formModelo;
     this.buscaColecoes();
     this.buscaModelos();
     this.buscaModelo();

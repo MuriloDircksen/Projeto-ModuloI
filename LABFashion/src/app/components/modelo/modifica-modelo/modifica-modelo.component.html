@@ -1,17 +1,11 @@
 <div class="container-cabecalho">
   <h5>{{titulo}}</h5>
-
 </div>
 <br>
-
 <div class="fundo">
-
-
   <div class="container">
 
     <form [formGroup]="formModelo" *ngIf="formModelo">
-
-
       <div class="container-quadro" >
 
         <br>
@@ -21,9 +15,9 @@
             <label for="floatingInput">Nome do Modelo</label>
           </div>
           <div  class="form-floating mt-3 mb-4 col-6">
-            <input formControlName="tipoModelo" type="text" class="form-control" list="tipoModelos" id="select" placeholder="Nome do modelo">
-            <label for="select">Tipo do Modelo</label>
-            <datalist id="tipoModelos" >
+
+            <select class="form-select" formControlName="nomeColecao" >
+              <option value="" disabled selected >Tipo do modelo</option>
                 <option value="bermuda">bermuda</option>
                 <option value="biquíni">biquíni</option>
                 <option value="bolsa">bolsa</option>
@@ -33,16 +27,15 @@
                 <option value="camisa">camisa</option>
                 <option value="chapéu">chapéu</option>
                 <option value="saia">saia</option>
-              </datalist>
+            </select>
           </div>
         </div>
         <div class="row">
           <div  class="form-floating mt-3 mb-4 col-6">
-            <input formControlName="nomeColecao" type="text" class="form-control" list="listaColecoes" id="colecoes" placeholder="Nome do modelo">
-            <label for="colecoes">Selecionar Coleção</label>
-            <datalist id="listaColecoes" >
-                <option *ngFor="let colecao of listaColecoes" [ngValue]="colecao.nomeColecao">{{colecao.nomeColecao}}</option>
-            </datalist>
+            <select class="form-select" formControlName="nomeColecao" >
+              <option value="" disabled selected >Selecionar Coleção</option>
+              <option *ngFor="let colecao of listaColecoes" [ngValue]="colecao.nomeColecao">{{colecao.nomeColecao}}</option>
+            </select>
           </div>
           <div  class="form-floating mt-3 mb-4 col-6">
             <input formControlName="nomeResponsavel" type="text" class="form-control" id="floatingInput" placeholder="Responsável pelo Modelo">
@@ -73,16 +66,16 @@
   </div>
 <br>
 <br><br><br>
-  <div>
-    <div>
+
+  <div class="ajustaBotoes">
       <div class="botaoExcluir" *ngIf="modeloId !== 'criar'">
         <button type="submit" class="btn btn-danger" (click)="excluiModelo()">Excluir</button>
       </div>
-      <div class="botoesPadrao">
-        <button type="submit" (click)="retornaPaginaColecao()" class="btn btn-light botaoCancelar">Cancelar</button>
-        <button type="submit" (click)="modificaModelo()" class="btn btn-primary">Atualizar</button>
-      </div>
+    <div class="botoesPadrao">
+      <button type="submit" (click)="retornaPaginaColecao()" class="btn btn-light botaoCancelar">Cancelar</button>
+      <button type="submit" (click)="modificaModelo()" [disabled]="!formModelo.valid" class="btn btn-primary">Atualizar</button>
     </div>
+
   </div>
 </div>
 

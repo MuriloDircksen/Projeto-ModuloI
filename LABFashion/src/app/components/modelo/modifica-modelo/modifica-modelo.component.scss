@@ -37,7 +37,7 @@ button{
   justify-content: flex-start;
 }
 
-input{
+input, select{
   color: #B4B6C1;
 }
 
@@ -46,4 +46,18 @@ input{
   align-items: center;
   justify-content: flex-start;
   gap: 30px 30px;
+}
+
+select:required:invalid {
+  color:  #B4B6C1;
+}
+option[value=""][disabled] {
+  display: none;
+}
+
+.ajustaBotoes{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
 }

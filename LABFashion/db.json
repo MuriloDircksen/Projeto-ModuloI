@@ -29,46 +29,46 @@
     },
     {
       "id": 2,
-      "nomeColecao": "Adidas",
+      "nomeColecao": "Primaver/Verão",
       "responsavelColecao": "Murilo",
-      "estacao": "inverno",
-      "marca": "adidas",
+      "estacao": "verão",
+      "marca": "Adidas",
       "orcamento": 10000,
       "lancamento": "2023"
     },
     {
       "id": 3,
-      "nomeColecao": "Adidas2",
+      "nomeColecao": "Raizes do Brasil",
       "responsavelColecao": "Murilo",
       "estacao": "inverno",
-      "marca": "adidas",
+      "marca": "Riachuelo",
       "orcamento": 500,
       "lancamento": "2023"
     },
     {
       "id": 4,
-      "nomeColecao": "Adidas3",
+      "nomeColecao": "Nike force",
       "responsavelColecao": "Murilo",
-      "estacao": "inverno",
-      "marca": "adidas",
+      "estacao": "primavera",
+      "marca": "nike",
       "orcamento": 2300,
       "lancamento": "2023"
     },
     {
       "id": 5,
-      "nomeColecao": "Adidas4",
+      "nomeColecao": "Arrezo evidence",
       "responsavelColecao": "Murilo",
       "estacao": "inverno",
-      "marca": "adidas",
+      "marca": "Arezzo",
       "orcamento": 7000,
       "lancamento": "2023"
     },
     {
       "id": 6,
-      "nomeColecao": "Adidas5",
+      "nomeColecao": "Renner outono",
       "responsavelColecao": "Murilo",
       "estacao": "inverno",
-      "marca": "adidas",
+      "marca": "Renner",
       "orcamento": 6500,
       "lancamento": "2023"
     }
@@ -86,7 +86,7 @@
     },
     {
       "id": 2,
-      "nomeModelo": "Camiseta sport",
+      "nomeModelo": "Camiseta manga",
       "responsavelModelo": "Murilo",
       "tipo": "camisa",
       "colecao": "Outono/Inverno",
@@ -96,43 +96,33 @@
     },
     {
       "id": 3,
-      "nomeModelo": "Camiseta sport",
+      "nomeModelo": "Camiseta regata",
       "responsavelModelo": "Murilo",
       "tipo": "camisa",
-      "colecao": "Adidas2",
+      "colecao": "Raizes do Brasil",
       "colecaoId": 3,
       "bordado": "nao",
       "estampa": "sim"
     },
     {
       "id": 4,
-      "nomeModelo": "Camiseta sport",
+      "nomeModelo": "Camiseta botão",
       "responsavelModelo": "Murilo",
       "tipo": "camisa",
-      "colecao": "Adidas4",
+      "colecao": "Arrezo evidence",
       "colecaoId": 5,
       "bordado": "sim",
       "estampa": "sim"
     },
     {
       "id": 5,
-      "nomeModelo": "Boné adidas",
+      "nomeModelo": "Boné Adidas",
       "responsavelModelo": "Murilo",
       "tipo": "boné",
-      "colecao": "Adidas",
+      "colecao": "Primaver/Verão",
       "colecaoId": 2,
       "bordado": "sim",
       "estampa": "sim"
-    },
-    {
-      "nomeModelo": "Boné adidas",
-      "responsavelModelo": "Murilo",
-      "tipo": "boné",
-      "colecao": "Adidas4",
-      "colecaoId": 5,
-      "bordado": "nao",
-      "estampa": "sim",
-      "id": 6
     }
   ]
 }

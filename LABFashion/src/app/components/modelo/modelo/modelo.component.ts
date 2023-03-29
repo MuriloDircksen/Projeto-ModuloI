@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { IColecao } from 'src/app/models/colecao';
-import { ColecaoService } from 'src/app/service/colecao/colecao.service';
+import { Subscription } from 'rxjs';
+
 import { ModeloService } from 'src/app/service/modelo/modelo.service';
 
 @Component({
@@ -9,26 +9,34 @@ import { ModeloService } from 'src/app/service/modelo/modelo.service';
   templateUrl: './modelo.component.html',
   styleUrls: ['./modelo.component.scss']
 })
-export class ModeloComponent {
+export class ModeloComponent implements OnDestroy, OnInit  {
 
   listaModelos!: any[] ;
+  subModelos!: Subscription;
 
-  constructor(private modeloService: ModeloService, private router: Router){}
+  constructor(private modeloService: ModeloService, private router: Router){
+    this.buscaModelos();
+
+  }
 
   ngOnInit(): void {
-    this.buscaModelos();
+
   }
 
   buscaModelos(){
-    this.modeloService.getModelos().subscribe((data) => {
+    this.subModelos = this.modeloService.getModelos().subscribe((data) => {
       this.listaModelos = data;
       this.listaModelos.sort((a,b) => (a.id > b.id) ? 1 : ((b.id > a.id ? -1 : 0)));
 
     })
   }
   criaModelo(){
-    this.router.navigate(['/modelo/criar'])
+    this.router.navigate(['/modelo/criar']);
   }
+
+ngOnDestroy(): void {
+  this.subModelos.unsubscribe;
+}
 
 }
 

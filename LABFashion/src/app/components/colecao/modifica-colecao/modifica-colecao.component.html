@@ -1,19 +1,12 @@
 <div class="container-cabecalho">
   <h5>{{titulo}}</h5>
-
 </div>
 <br>
 
 <div class="fundo">
-
-
   <div class="container">
-
     <form [formGroup]="formColecao" *ngIf="formColecao">
-
-
       <div class="container-quadro" >
-
         <br>
         <div class="row">
           <div  class="form-floating mt-3 mb-4 col-6">
@@ -54,13 +47,13 @@
   </div>
   <br>
   <div>
-    <div>
+    <div class="ajustaBotoes">
       <div class="botaoExcluir" *ngIf="colecaoId !== 'criar'">
         <button type="submit" class="btn btn-danger" (click)="excluiColecao()">Excluir</button>
-      </div>
+      </div >
       <div class="botoesPadrao">
         <button type="submit" (click)="retornaPaginaColecao()" class="btn btn-light botaoCancelar">Cancelar</button>
-        <button type="submit" (click)="modificaColecao()" class="btn btn-primary">Atualizar</button>
+        <button type="submit" (click)="modificaColecao()" [disabled]="!formColecao.valid" class="btn btn-primary">Atualizar</button>
       </div>
     </div>
   </div>

@@ -1,4 +1,4 @@
-import { IModelo } from './../../models/modelo';
+
 import { Router } from '@angular/router';
 import { ColecaoService } from './../../service/colecao/colecao.service';
 import { IColecao } from './../../models/colecao';
@@ -11,24 +11,23 @@ import { Subscription } from 'rxjs';
   templateUrl: './colecao.component.html',
   styleUrls: ['./colecao.component.scss']
 })
-export class ColecaoComponent implements OnInit, OnDestroy{
+export class ColecaoComponent implements OnDestroy{
 
   listaColecoes!: IColecao[];
   listaModelos!: any[];
   subColecoes!: Subscription;
 
-  constructor(private colecaoService: ColecaoService, private router: Router, private modeloService: ModeloService){}
-
-  ngOnInit(): void {
+  constructor(private colecaoService: ColecaoService,
+    private router: Router, private modeloService: ModeloService){
     this.buscaColecoes();
-    this.retornaModelos();
   }
+
 
    buscaColecoes(){
     this.subColecoes =  this.colecaoService.getColecoes().subscribe((data) => {
       this.listaColecoes = data;
     })
-
+    this.retornaModelos();
   }
   retornaModelos(){
 
