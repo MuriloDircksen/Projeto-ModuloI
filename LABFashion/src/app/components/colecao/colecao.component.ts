@@ -14,7 +14,7 @@ import { Subscription } from 'rxjs';
 export class ColecaoComponent implements OnDestroy{
 
   listaColecoes!: IColecao[];
-  listaModelos!: any[];
+  listaModelos: any[] = [];
   subColecoes!: Subscription;
 
   constructor(private colecaoService: ColecaoService,

@@ -19,6 +19,7 @@ export class ModificaModeloComponent {
   listaColecoes!: any[] | IColecao[];
   listaModelos!: any[];
 
+
   constructor(private activatedRoute: ActivatedRoute, private modeloService: ModeloService,
     private formBuilder: FormBuilder, private router: Router, private colecaoService: ColecaoService){}
 
@@ -116,12 +117,8 @@ export class ModificaModeloComponent {
   }
 
   encontraColeçãoId(){
-    console.log(this.listaColecoes);
-    console.log(this.nomeColecao);
-
 
    const colecaoId =  this.listaColecoes.find((data) => data.nomeColecao === this.nomeColecao);
-   console.log(colecaoId);
 
    return colecaoId.id;
   }
@@ -138,8 +135,7 @@ export class ModificaModeloComponent {
         bordado: this.bordado,
         estampa: this.estampa
       }
-      console.log(this.encontraColeçãoId());
-      console.log(modelo);
+
       this.modeloService.criarModelo(modelo).subscribe();
       this.retornaPaginaColecao();
       return;
@@ -154,8 +150,7 @@ export class ModificaModeloComponent {
         bordado: this.bordado,
         estampa: this.estampa
     }
-    console.log(this.encontraColeçãoId());
-    console.log(modelo);
+
     this.modeloService.atualizarModelo(modelo).subscribe();
     this.retornaPaginaColecao();
 
@@ -164,11 +159,14 @@ export class ModificaModeloComponent {
  excluiModelo(){
 
     this.modeloService.excluirModelo(this.modeloId).subscribe();
-    this.retornaPaginaColecao();
+    this.router.navigate(['/modelo']);
   }
 
   retornaPaginaColecao(){
-    this.router.navigate(['/modelo']);
+    setTimeout(() => {
+      this.router.navigate(['/modelo']);
+    }, 300);
+
   }
 
 }

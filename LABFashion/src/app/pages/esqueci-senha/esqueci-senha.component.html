@@ -22,9 +22,13 @@
 
     <ng-template #outraPagina >
       <div class="container-quadro">
-        <h2>Redefinir Senha</h2>
-        <h6 class="centralizador">Um link para redefinição de senha foi enviado para o seu e-mail {{email.value}}</h6>
-
+        <div class="imagem">
+          <img src="../../../assets/seta-esquerda.png" alt="" routerLink="/login">
+        </div>
+        <div class="titulo">
+          <h2>Redefinir Senha</h2>
+          <h6 class="centralizador">Um link para redefinição de senha foi enviado para o seu e-mail {{email.value}}</h6>
+        </div>
         <button (click)="retornaLogin()" class="btn btn-primary">{{textoBotao}}</button>
       </div>
 

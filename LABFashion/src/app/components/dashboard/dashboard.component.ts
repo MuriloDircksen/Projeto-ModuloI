@@ -16,7 +16,7 @@ export class DashboardComponent implements OnInit {
   maioresColecoes!: IColecao[];
   totalColecoes: number = 0;
   totalModelos: number = 0;
-  listaModelos!: any[];
+  listaModelos: any[] = [];
   mediaOrcamentos: number = 0;
 
   constructor(private colecoesService: ColecaoService, private modeloService: ModeloService){}

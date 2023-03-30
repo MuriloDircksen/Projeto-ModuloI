@@ -152,7 +152,7 @@ export class ModificaColecaoComponent implements OnInit{
 
      if(this.retornaTotalModelos(this.colecaoId) === 0){
       this.colecaoService.excluirColecao(this.colecaoId).subscribe();
-      this.retornaPaginaColecao();
+      this.router.navigate(['/colecao']);
       return;
     }
     alert("Impossível excluir coleções com modelos associados!")
@@ -160,7 +160,9 @@ export class ModificaColecaoComponent implements OnInit{
   }
 
   retornaPaginaColecao(){
-    this.router.navigate(['/colecao']);
+    setTimeout(() => {
+      this.router.navigate(['/colecao']);
+    }, 50);
   }
 
 }
