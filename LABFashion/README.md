@@ -1,11 +1,12 @@
 # LABFashion
 
-Projeto desenvolvido utilizando Angular CLI, versão 15.1.6, e json-server para criação de um demo rest json webservice, como requisito para conclusão do projeto I do módulo I do curso DevinHouse turma Audaces.
+Projeto desenvolvido utilizando Angular CLI, versão 15.1.6, e json-server, para criação de um demo rest json webservice, como requisito para conclusão do projeto I do módulo I do curso DevinHouse turma Audaces.
 
 ## Ferramentas e requisitos necessárias para rodar o projeto
 - VSCode
 - Angular CLI 15.1.6 e suas dependências
 - JSON server 0.17.3
+- Bootstrap 5.3.0
 
 ### Como rodar a Aplicação
 
