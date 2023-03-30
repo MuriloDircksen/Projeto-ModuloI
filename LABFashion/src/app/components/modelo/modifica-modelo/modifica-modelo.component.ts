@@ -123,7 +123,7 @@ export class ModificaModeloComponent {
    return colecaoId.id;
   }
 
-   modificaModelo(){
+   async modificaModelo(){
     if(this.modeloId === "criar"){
 
       const modelo: any= {
@@ -136,7 +136,7 @@ export class ModificaModeloComponent {
         estampa: this.estampa
       }
 
-      this.modeloService.criarModelo(modelo).subscribe();
+      await this.modeloService.criarModelo(modelo).toPromise();
       this.retornaPaginaColecao();
       return;
     }
@@ -163,9 +163,9 @@ export class ModificaModeloComponent {
   }
 
   retornaPaginaColecao(){
-    setTimeout(() => {
+
       this.router.navigate(['/modelo']);
-    }, 300);
+
 
   }
 

@@ -95,7 +95,7 @@ export class ModificaColecaoComponent implements OnInit{
       this.verificaTemId();
     })
   }
-  modificaColecao(){
+  async modificaColecao(){
     if(this.colecaoId === "criar"){
       const colecao: any= {
         nomeColecao: this.nomeColecao,
@@ -108,7 +108,7 @@ export class ModificaColecaoComponent implements OnInit{
       }
 
 
-      this.colecaoService.criarColecao(colecao).subscribe();
+      await this.colecaoService.criarColecao(colecao).toPromise();
       this.retornaPaginaColecao();
       return;
     }
@@ -160,9 +160,9 @@ export class ModificaColecaoComponent implements OnInit{
   }
 
   retornaPaginaColecao(){
-    setTimeout(() => {
+
       this.router.navigate(['/colecao']);
-    }, 50);
+
   }
 
 }

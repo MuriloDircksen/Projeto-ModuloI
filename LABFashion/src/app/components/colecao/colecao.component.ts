@@ -11,7 +11,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './colecao.component.html',
   styleUrls: ['./colecao.component.scss']
 })
-export class ColecaoComponent implements OnDestroy{
+export class ColecaoComponent implements OnInit,OnDestroy{
 
   listaColecoes!: IColecao[];
   listaModelos: any[] = [];
@@ -19,9 +19,12 @@ export class ColecaoComponent implements OnDestroy{
 
   constructor(private colecaoService: ColecaoService,
     private router: Router, private modeloService: ModeloService){
-    this.buscaColecoes();
+
   }
 
+  ngOnInit(): void {
+    this.buscaColecoes();
+  }
 
    buscaColecoes(){
     this.subColecoes =  this.colecaoService.getColecoes().subscribe((data) => {

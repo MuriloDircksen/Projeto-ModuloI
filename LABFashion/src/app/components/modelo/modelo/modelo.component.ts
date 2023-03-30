@@ -15,12 +15,11 @@ export class ModeloComponent implements OnDestroy, OnInit  {
   subModelos!: Subscription;
 
   constructor(private modeloService: ModeloService, private router: Router){
-    this.buscaModelos();
 
   }
 
   ngOnInit(): void {
-
+    this.buscaModelos();
   }
 
   buscaModelos(){
