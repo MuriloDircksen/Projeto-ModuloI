@@ -15,6 +15,14 @@
       "cnpj": "11111111111111",
       "email": "murilo@kairos.com",
       "id": 2
+    },
+    {
+      "nome": "teste",
+      "senha": "12345678",
+      "nomeEmpresa": "teste",
+      "cnpj": "11111111111111",
+      "email": "murilo.dircksen@gmail.com",
+      "id": 3
     }
   ],
   "colecoes": [
